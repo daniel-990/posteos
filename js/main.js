@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
 		$("#data").html("...");
 	});
 	var $contenido = $('<h2 class="text-center">para poder utilizar todas las funcionalidades de la plataforma inicie sesion</h2>');
-	//Materialize.toast($contenido, 5000);
+	Materialize.toast($contenido, 5000);
 });
 
 function init(){
