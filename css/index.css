@@ -1,0 +1,117 @@
+/*------------*/
+/*-name app: administrador de servicios*/
+/*-version: 0.0.1*/
+/*-autor: daniel arango villegas*/
+/*------------*/
+
+html{
+	
+}
+body{
+
+}
+.fondo-negro{
+	background-color: #828282 !important;
+}
+.container{
+	width:100%;
+	position:relative;
+}
+.container-footer{
+	width:95%;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.color-bot{
+	color:#2D5699;
+}
+.text-center{
+	text-align:center;
+}
+.text-justify{
+	text-align:justify;
+}
+.padding-50{
+	padding:50px;
+}
+.padding-30{
+	padding:30px;
+}
+.padding-20{
+	padding:20px;
+}
+.padding-15{
+	padding:15px;
+}
+.padding-10{
+	padding:10px;
+}
+.margin-50{
+    margin:50px;
+}
+.margin-30{
+    margin:30px;
+}
+.margin-20{
+    margin:20px;
+}
+.margin-10{
+    margin:10px;
+}
+.mr-bot{
+	position:fixed;
+}
+.footer-text{
+	color:#ccc;
+	font-size:10px;
+	text-align:center;
+}
+.container-prpal{
+	width: 50%;
+}
+.ancho-350{
+	width: 340px;
+}
+.ancho-390{
+	width: 390px;
+}
+.ancho-500{
+	width: 500px;
+}
+
+.container-prpal h4{
+	text-align:center;
+}
+.modal-custom{
+	height:600px;
+}
+.text{
+	height:300px !important;
+}
+#data{
+	border: 1px solid rgba(38, 166, 154, 0.32);
+	background-color: rgba(0, 247, 144, 0.11);
+	padding:10px;
+}
+.color{
+	color: #2196F3;
+}
+.color2{
+	color:#30998E;
+}
+.size{
+	font-size:50px;
+}
+
+@media (max-width: 1024px){ 
+.container-prpal{
+	width: 100%;
+}
+.input-mobil{
+	width: 100% !important;
+}
+}
