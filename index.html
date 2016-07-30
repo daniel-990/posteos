@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>posts | desarrollo web | coding | daniel8bit</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://cloudboost.io/js-sdk/cloudboost.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+	<!--mis archivos-->
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<!--mis archivos-->
+
+</head>
+<body>
+
+  <div class="btn waves-effect waves-light chip margin-10 mr-bot inicia-sesion" data-activates="login-panel">
+    <!--<img src="img/close.png" alt="Contact Person">-->
+    <i class="material-icons left size">vpn_key</i>
+    Login de usuario
+  </div>
+
+  <ul id="login-panel" class="side-nav ancho-390 container-fluid">
+  <h5 class="padding-10">Login de usuario</h5>
+  	<form class="col s12">
+  		<div class="row">
+  			<div class="input-field col s12">
+  				<input id="input-user" type="text" placeholder="nombre de usuario" required>
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="input-field col s12">
+  				<input id="input-pass" type="password" placeholder="contraseña" required>
+  			</div>
+  		</div>
+  		<button id="login" class="margin-10 btn-floating green waves-effect waves-light tooltipped" data-tooltip="abrir sesión"><i class="material-icons right">send</i>enviar</button>
+  		<button id="cerrar-s" class="margin-10 btn-floating red waves-effect tooltipped" data-tooltip="cerrar sesión"><i class="material-icons right">phonelink_lock</i>cerrar sesion</button>
+  	</form>
+  </ul>
+
+  <div class="btn waves-effect waves-light chip boton-bot margin-50 mr-bot" data-activates="chat-mr-bot">
+    <img src="img/mr-bot.png" alt="Contact Person">
+    Mr. Bot
+  </div>
+  <ul id="chat-mr-bot" class="side-nav ancho-350">
+  	<h3 class="padding-10"><i class="material-icons left size">memory</i> Mr. Bot</h3>
+  	<p class="padding-15">Mr. Bot un guia que te explicara como funciona esta pequeña plataforma. Escriba su mensaje y presione enter para enviar</p>
+  	<section class="">
+  		<div class="contn container-fluid row">
+  			<input id="input" type="text" data-position="bottom" class="tooltipped" data-tooltip="preguntame te respondere al instante"> 
+  			<br>
+  			<button id="rec" class="btn waves-effect waves-light">Habla</button>
+  			<br><br>
+  			<p id="data"></p>
+  		</div>	
+  	</section>
+  </ul>
+
+
+<h1 class="text-center padding-50">Registro de Posts</h1>
+	<section class="container-prpal container-fluid">
+		<ul class="collapsible popout" data-collapsible="accordion">
+			<li>
+				<div class="collapsible-header"><i class="material-icons">dns</i>Ingresar una categoria nueva</div>
+				<div class="collapsible-body padding-10">
+					<h4 class="flow-text">Ingresa una categoria nueva</h4>
+					<div class="row">
+						<div class="input-field col s6 input-mobil">
+							<i class="material-icons prefix">hearing</i>
+							<input id="data_seccion" type="text" placeholder="ingresar una seccion nueva" data-position="right" class="tooltipped" data-tooltip="ingresa una seccion y eligela en el siguiente modulo">
+							<a href="#!" id="btn_seccion" class="waves-effect waves-circle waves-light btn-floating secondary-content red">
+								<i class="material-icons">add</i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header"><i class="material-icons">attach_file</i>Subir imagen destacada</div>
+				<div class="collapsible-body padding-10">
+					<h4 class="flow-text">Sube una imagen destacada para tu post</h4>
+					<section class="ancho-500 container-fluid">
+					    <img id="file_post" src="" style="width: 100%;" class="center-align">
+					</section>
+					<div class="row">
+						<div class="input-field col s6 input-mobil">
+							<div class="row">
+								<div class="input-field col s12">
+									<input type="file" id="file">
+								</div>
+							</div>
+							<a href="#!" id="btn_file" class="waves-effect waves-circle waves-light btn-floating secondary-content red">
+								<i class="material-icons">attach_file</i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</li>			<li>
+				<div class="collapsible-header"><i class="material-icons">mode_edit</i>Registro del Post</div>
+				<div class="collapsible-body padding-20">
+				<h4 class="flow-text">Registra los Datos</h4>
+					<div class="row">
+						<form class="col s12">
+							<label>selecciona la categoria en la cual quieres copiar el post</label>
+							<select id="listas" class="browser-default" name="nombre">
+								<option value="" disabled selected>escoge la seccion</option>
+							</select>
+							<input id="selecter" type="text" placeholder="seccion" name="valor1" disabled>
+
+							<div class="row">
+								<div class="input-field col s6 input-mobil">
+									<i class="material-icons prefix">person_pin</i>
+									<input id="data_nombre" type="text" placeholder="nombre" data-position="right" class="tooltipped" data-tooltip="nombre del autor del post">
+									<br>
+									<i class="material-icons prefix">mode_edit</i>
+									<input id="data_apellido" type="text" placeholder="apellido" data-position="right" class="tooltipped" data-tooltip="apellido del autor del post">
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">comment</i>
+									<textarea id="data_contenido" class="materialize-textarea tooltipped" length="120" placeholder="contenido" data-position="right" data-tooltip="ingresa lo que quieras para tu post"></textarea>
+								</div>
+							</div>
+							<br>
+							<strong>Imagen</strong>
+							<input id="img_data" type="text" placeholder="Imagen" disabled><!--imagen cargada-->
+							<button id="btn_data" class="btn waves-effect waves-light" type="submit" name="action">enviar
+								<i class="material-icons right">send</i>
+							</button>
+						</form>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header"><i class="material-icons">forum</i>Post</div>
+				<div class="collapsible-body padding-30">
+
+					<div id="text_data" class="col s12 m7"></div>
+
+				</div>
+			</li>
+		</ul>
+	</section>
+	<p class="footer-text">
+	Plataforma / Registro de datos
+	<br>
+	Esta es una plataforma para la administracion de contenido de una web version: 0.0.1
+	<br>
+	© 2016 Copyright <a href="http://nodebit.tumblr.com/" target="blank">NodeBit</a> | <a href="https://drive.google.com/file/d/0B3YnWHo3AoqUeHRRYVpRUWFUUHM/view?usp=sharing" target="blan_k">daniel8bit</a>
+	</p>
+</body>
+</html>
