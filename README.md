@@ -10,7 +10,7 @@ codigo fuente
  `registro del post`
  `adjuntar imagen`
 
-#chat con un bot
+#chatea con un bot
  `la aplicacion cuenta con un pequeño bot que te respondera al instante`
 
 #inicio de sesion con redes sociales
