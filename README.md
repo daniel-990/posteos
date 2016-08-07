@@ -15,5 +15,9 @@ codigo fuente
 
 #inicio de sesion con redes sociales
  `esta funcionalidad la tendra pronto esta en modo de desarrollo` 
+
   *asta el momento solo se tiene disponible inicio de sesion con google
+
+#datos para el admin o usuario registra en la -DB-
+
  `user:   pass: `
