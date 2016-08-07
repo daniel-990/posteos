@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://cloudboost.io/js-sdk/cloudboost.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script> <!--google sign-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 	<!--mis archivos-->
@@ -40,7 +41,8 @@
   				<input id="input-pass" type="password" placeholder="contraseña" required>
   			</div>
   		</div>
-  		<button id="login" class="margin-10 btn-floating green waves-effect waves-light tooltipped" data-tooltip="abrir sesión"><i class="material-icons right">send</i>enviar</button>
+  		<button id="login" class="margin-10 btn-floating green waves-effect waves-light tooltipped" data-tooltip="abrir sesión root"><i class="material-icons right">send</i>enviar</button>
+  		<button id="google" class="margin-10 btn-floating blue waves-effect tooltipped" data-tooltip="inicie con google"><i class="material-icons right">picture_in_picture</i>logeate con google</button>
   		<button id="cerrar-s" class="margin-10 btn-floating red waves-effect tooltipped" data-tooltip="cerrar sesión"><i class="material-icons right">phonelink_lock</i>cerrar sesion</button>
   	</form>
   </ul>
