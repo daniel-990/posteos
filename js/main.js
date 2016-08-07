@@ -3,7 +3,7 @@
 /*-version: 0.0.1*/
 /*-autor: daniel arango villegas*/
 /*------------*/
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($){
 	init();
 	mrBot();
 
@@ -13,14 +13,14 @@ jQuery(document).ready(function($) {
 	$(".boton-bot").on('click',function(){
 		$("#data").html("...");
 	});
-	var $contenido = $('<h2 class="text-center">para poder utilizar todas las funcionalidades de la plataforma inicie sesion</h2>');
-	Materialize.toast($contenido, 5000);
 });
 
 function init(){
 	var btn = $("#btn_data");
 	var btn_seccion = $("#btn_seccion");
 	var btn_file = $("#btn_file");
+	var btn_google = $("#google");
+
 
 			var config = {
 				apiKey: "AIzaSyDhuQPMMEyJG9ucfxJSHjFBXlRtZjfUwQk",
@@ -38,6 +38,46 @@ function init(){
 			var view_data = firebase.database().ref('contenido');
 			var link = firebase.database().ref('link');
 
+			var provider = new firebase.auth.GoogleAuthProvider();
+
+            //verificacion del inicio de sesion
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+					console.log(user.email);
+					console.log(user.emailVerified);
+					console.log(user.isAnonymous);
+					var $contenido2 = $('<h5 class="text-center">Hola '+user.email+'</h5>');
+					Materialize.toast($contenido2, 5000);
+				} else {
+					console.log("no inicio sesion");
+				    var $contenido = $('<h5 class="text-center">para poder utilizar todas las funcionalidades<br>inicie sesion</h5>');
+					Materialize.toast($contenido, 5000);
+				}
+			});
+			//inicio de sesion con google
+			btn_google.on('click',function(event){
+				event.preventDefault();
+				firebase.auth().signInWithRedirect(provider).then(function(result) {
+					var token = result.credential.accessToken;
+					var user = result.user;
+
+					    var contador=0;
+        			    setInterval(function(){
+        			    	contador++;
+        			    	if (contador==1){
+        			    		window.location.href = "index.html";
+        			    	}else{
+        			    		console.log("error_1!");
+        			    	}
+        			    },1000);
+
+				}).catch(function(error) {
+					var errorCode = error.code;
+					var errorMessage = error.message;
+					var email = error.email;
+					var credential = error.credential;
+				});
+			});
 
 //inicia session
 			$("#login").on('click', function(event) {
