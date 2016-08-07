@@ -14,4 +14,6 @@ codigo fuente
  `la aplicacion cuenta con un pequeño bot que te respondera al instante`
 
 #inicio de sesion con redes sociales
- `esta funcionalidad la tendra pronto esta en modo de desarrollo`
+ `esta funcionalidad la tendra pronto esta en modo de desarrollo` 
+  *asta el momento solo se tiene disponible inicio de sesion con google
+ `user:   pass: `
